@@ -8,12 +8,27 @@ spring:
     active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/bookdb?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://192.168.64.100:3306/bookdb?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: 712014
+#    url: jdbc:oracle:thin:@//192.168.64.110:1521/freepdb1
+#    username: tang
+#    password: 712014
+#    driver-class-name: oracle.jdbc.OracleDriver
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:/mapper/*.xml
+  global-config:
+    db-config:
+      logic-delete-value: 1   # 标记删除的值
+      logic-not-delete-value: 0  # 标记未删除的值
+
+book:
+  jwt:
+    user-token-name: book
+    user-secret-key: th712014
+    user-ttl: 720000000

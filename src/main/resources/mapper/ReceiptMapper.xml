@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.hailing.book_manager.mapper.ReceiptMapper">
+
+    <select id="pageQuery" resultType="io.hailing.book_manager.entity.vo.ReceiptVO">
+        SELECT r.id,
+               r.amount,
+               r.date,
+               r.create_time,
+               r.update_time,
+               s.name store,
+               p.name payment
+        FROM receipt r
+                 LEFT JOIN store s
+                           ON s.id = r.store_id
+                 LEFT JOIN payment p
+                           ON p.id = r.payment_id
+        WHERE r.user_id = #{userId}
+    </select>
+</mapper>

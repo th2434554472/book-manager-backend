@@ -1,6 +1,6 @@
 package io.hailing.book_manager.mapper;
 
-import io.hailing.book_manager.entity.Author;
+import io.hailing.book_manager.entity.pojo.Author;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 

@@ -1,17 +1,17 @@
-package io.hailing.book_manager.entity;
+package io.hailing.book_manager.entity.pojo;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
@@ -23,33 +23,33 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@ApiModel(value="Book对象", description="")
-public class Book implements Serializable {
+@Accessors(chain = true)
+@ApiModel(value="Author对象", description="")
+public class Author implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @ApiModelProperty(value = "主键")
     @TableId(value = "id", type = IdType.AUTO)
-    private Long id;
+    private Integer id;
 
-    private String bookName;
+    @ApiModelProperty(value = "姓名")
+    private String name;
 
-    private LocalDate date;
+    @ApiModelProperty(value = "时代")
+    private String age;
 
-    private String authorName;
+    @ApiModelProperty(value = "性别")
+    private String sex;
 
-    private String translator;
+    @ApiModelProperty(value = "国家")
+    private String country;
 
-    private String publisherName;
-
-    private String categoryName;
-
-    private BigDecimal price;
-
-    private String image;
-
+    @ApiModelProperty(value = "创建时间")
     @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
+    @ApiModelProperty(value = "更新时间")
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
 }

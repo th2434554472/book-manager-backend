@@ -4,7 +4,7 @@ package io.hailing.book_manager.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.hailing.book_manager.common.Result;
-import io.hailing.book_manager.entity.Publisher;
+import io.hailing.book_manager.entity.pojo.Publisher;
 import io.hailing.book_manager.entity.dto.PageQueryDTO;
 import io.hailing.book_manager.entity.dto.PublisherDTO;
 import io.hailing.book_manager.service.PublisherService;

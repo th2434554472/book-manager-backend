@@ -1,4 +1,4 @@
-package io.hailing.book_manager.entity;
+package io.hailing.book_manager.entity.pojo;
 
 import lombok.Data;
 

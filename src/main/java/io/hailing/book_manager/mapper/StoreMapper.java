@@ -1,9 +1,9 @@
 package io.hailing.book_manager.mapper;
 
-import io.hailing.book_manager.entity.pojo.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import io.hailing.book_manager.entity.pojo.Store;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface UserMapper extends BaseMapper<User> {
+public interface StoreMapper extends BaseMapper<Store> {
 }

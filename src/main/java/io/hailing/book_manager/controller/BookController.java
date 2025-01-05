@@ -2,9 +2,9 @@ package io.hailing.book_manager.controller;
 
 
 import io.hailing.book_manager.common.Result;
-import io.hailing.book_manager.entity.BookQuery;
+import io.hailing.book_manager.entity.pojo.BookQuery;
 import io.hailing.book_manager.entity.dto.BookDTO;
-import io.hailing.book_manager.entity.Book;
+import io.hailing.book_manager.entity.pojo.Book;
 import io.hailing.book_manager.entity.dto.PageQueryDTO;
 import io.hailing.book_manager.entity.vo.BookVO;
 import io.hailing.book_manager.service.BookService;

@@ -1,31 +1,25 @@
-package io.hailing.book_manager.entity;
+package io.hailing.book_manager.entity.pojo;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
-import java.time.LocalDateTime;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-/**
- * <p>
- *
- * </p>
- *
- * @author testjava
- * @since 2023-10-19
- */
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="Publisher对象", description="")
-public class Publisher implements Serializable {
+@ApiModel(value="Receipt对象", description="")
+public class Receipt implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -33,23 +27,20 @@ public class Publisher implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    @ApiModelProperty(value = "出版社名")
-    private String name;
+    @ApiModelProperty(value = "用户id")
+    private Long userId;
 
-    @ApiModelProperty(value = "地址")
-    private String address;
+    @ApiModelProperty(value = "金额")
+    private BigDecimal amount;
 
-    @ApiModelProperty(value = "网址")
-    private String website;
+    @ApiModelProperty(value = "店铺id")
+    private Integer storeId;
 
-    @ApiModelProperty(value = "电话")
-    private String phone;
+    @ApiModelProperty(value = "日期")
+    private LocalDate date;
 
-    @ApiModelProperty(value = "邮箱")
-    private String email;
-
-    @ApiModelProperty(value = "邮编")
-    private String code;
+    @ApiModelProperty(value = "支付方式id")
+    private Integer paymentId;
 
     @ApiModelProperty(value = "创建时间")
     @TableField(fill = FieldFill.INSERT)
@@ -59,5 +50,7 @@ public class Publisher implements Serializable {
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
 
+    @ApiModelProperty(value = "是否删除,1:是，0：否")
+    private Boolean isDeleted;
 
 }

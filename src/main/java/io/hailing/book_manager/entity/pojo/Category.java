@@ -1,12 +1,13 @@
-package io.hailing.book_manager.entity;
+package io.hailing.book_manager.entity.pojo;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
+
+import java.time.LocalDateTime;
+
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
-import java.time.LocalDateTime;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -19,13 +20,13 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author testjava
- * @since 2023-10-19
+ * @since 2023-10-23
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="Author对象", description="")
-public class Author implements Serializable {
+@ApiModel(value="Category对象", description="")
+public class Category implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -33,17 +34,11 @@ public class Author implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    @ApiModelProperty(value = "姓名")
+    @ApiModelProperty(value = "分类名称")
     private String name;
 
-    @ApiModelProperty(value = "时代")
-    private String age;
-
-    @ApiModelProperty(value = "性别")
-    private String sex;
-
-    @ApiModelProperty(value = "国家")
-    private String country;
+    @ApiModelProperty(value = "顺序")
+    private Integer sort;
 
     @ApiModelProperty(value = "创建时间")
     @TableField(fill = FieldFill.INSERT)

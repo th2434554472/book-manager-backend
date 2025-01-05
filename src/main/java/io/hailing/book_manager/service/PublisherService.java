@@ -1,6 +1,6 @@
 package io.hailing.book_manager.service;
 
-import io.hailing.book_manager.entity.Publisher;
+import io.hailing.book_manager.entity.pojo.Publisher;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
